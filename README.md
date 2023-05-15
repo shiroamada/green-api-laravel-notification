@@ -52,11 +52,12 @@ Add your green api instanceId and token to your `config/services.php`:
 // config/services.php
 ...
 'green_api' => [
-    'instanceId' => env('GREENAPI_INSTANCEID'),
-    'token' => env('GREENAPI_TOKEN'),
-    'isMalaysiaMode' => env('GREENAPI_MALAYSIA_MODE') ?? 0,
-    'isDebug' => env('GREENAPI_DEBUG_ENABLE') ?? 0,
-    'debugReceiveNumber' => env('GREENAPI_DEBUG_RECEIVE_NUMBER'),
+    'isEnable' => env('GREEN_API_ENABLE') ?? 0,
+    'instanceId' => env('GREEN_API_INSTANCEID'),
+    'token' => env('GREEN_API_TOKEN'),
+    'isMalaysiaMode' => env('GREEN_API_MALAYSIA_MODE') ?? 0,
+    'isDebug' => env('GREEN_API_DEBUG_ENABLE') ?? 0,
+    'debugReceiveNumber' => env('GREEN_API_DEBUG_RECEIVE_NUMBER'),
 ],
 ...
 ```

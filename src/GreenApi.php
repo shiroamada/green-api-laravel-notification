@@ -24,6 +24,9 @@ class GreenApi
     public $isMalaysiaMode;
 
     /** @var integer */
+    public $isEnable;
+
+    /** @var integer */
     public $isDebug;
 
     /** @var string */
@@ -43,6 +46,7 @@ class GreenApi
         $this->token = $config['token'];
 
         $this->isMalaysiaMode = $config['isMalaysiaMode'];
+        $this->isEnable = (isset($config['isEnable']) ? $config['isEnable'] : 0);
         $this->isDebug = $config['isDebug'];
         $this->debugReceiveNumber = $config['debugReceiveNumber'];
 
@@ -64,28 +68,34 @@ class GreenApi
      */
     public function send($params)
     {
-        try {
+        if($this->isEnable)
+        {
+            try
+            {
 
-            $response = $this->httpClient->post(
-                $this->apiUrl.'waInstance'.$this->instanceId.$this->action.$this->token,
-                [
-                    'json' => [
-                        'chatId' => $params['to'].'@c.us',
-                        'message' => $params['mesg'],
-                    ]
-                ]);
+                $response = $this->httpClient->post(
+                    $this->apiUrl . 'waInstance' . $this->instanceId . $this->action . $this->token,
+                    [
+                        'json' => [
+                            'chatId'  => $params['to'] . '@c.us',
+                            'message' => $params['mesg'],
+                        ]
+                    ]);
 
-            $stream = $response->getBody();
+                $stream = $response->getBody();
 
-            $content = $stream->getContents();
+                $content = $stream->getContents();
 
-            $response = json_decode((string) $response->getBody(), true);
+                $response = json_decode((string) $response->getBody(), true);
 
-            return $response;
-        } catch (DomainException $exception) {
-            throw CouldNotSendNotification::exceptionGreenApiRespondedWithAnError($exception);
-        } catch (\Exception $exception) {
-            throw CouldNotSendNotification::couldNotCommunicateWithGreenApi($exception);
+                return $response;
+            } catch (DomainException $exception)
+            {
+                throw CouldNotSendNotification::exceptionGreenApiRespondedWithAnError($exception);
+            } catch (\Exception $exception)
+            {
+                throw CouldNotSendNotification::couldNotCommunicateWithGreenApi($exception);
+            }
         }
     }
 }
