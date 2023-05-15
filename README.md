@@ -97,7 +97,7 @@ public function routeNotificationForGreenApi()
 
 `content()`: Set a content of the notification message.
 
-`sendAt()`: Set a time for scheduling the notification message.
+To send a next new line message, in PHP please use double quote "\n"
 
 ## Changelog
 

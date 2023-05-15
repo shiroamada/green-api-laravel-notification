@@ -50,7 +50,7 @@ class GreenApi
         //POST https://api.green-api.com/waInstance{{idInstance}}/SendMessage/{{apiTokenInstance}}
         $this->httpClient = new HttpClient([
             'base_uri' =>  $this->apiUrl.'waInstance'.$this->instanceId.$this->action,
-            'timeout' => 2.0,
+            'timeout' => 8.0,
             'headers' => [ 'Content-Type' => 'application/json' ]
         ]);
     }
@@ -67,9 +67,9 @@ class GreenApi
         try {
 
             $response = $this->httpClient->post(
-                $this->apiUrl.$this->instanceId.$this->action.$this->token,
+                $this->apiUrl.'waInstance'.$this->instanceId.$this->action.$this->token,
                 [
-                    'json '=> [
+                    'json' => [
                         'chatId' => $params['to'].'@c.us',
                         'message' => $params['mesg'],
                     ]

@@ -25,7 +25,7 @@ class GreenApiChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        $to = $notifiable->routeNotificationFor('GreenApi');
+        $to = $notifiable->routeNotificationFor('green_api');
 
         if (empty($to)) {
             throw CouldNotSendNotification::missingRecipient();
@@ -43,7 +43,7 @@ class GreenApiChannel
     protected function sendMessage($recipient, GreenApiMessage $message)
     {
         $message->content = html_entity_decode($message->content, ENT_QUOTES, 'utf-8');
-        $message->content = urlencode($message->content);
+        //$message->content = urlencode($message->content);
 
         //clean the recipient
         $recipient = str_replace("-", "", $recipient);
