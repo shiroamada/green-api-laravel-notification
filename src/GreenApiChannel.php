@@ -42,7 +42,7 @@ class GreenApiChannel
 
     protected function sendMessage($recipient, GreenApiMessage $message)
     {
-        $message->content = html_entity_decode($message->content, ENT_QUOTES, 'utf-8');
+        //$message->content = html_entity_decode($message->content, ENT_QUOTES, 'utf-8');
         //$message->content = urlencode($message->content);
 
         //clean the recipient
