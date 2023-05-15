@@ -1,0 +1,51 @@
+{
+    "name": "shiroamada/green-api-laravel-notification",
+    "description": "Green API Notifications channel for Laravel 5.3 and Above",
+    "keywords": ["laravel", "notifications", "green-api"],
+    "homepage": "https://github.com/shiroamada/green-api-laravel-notification",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shiro Amada",
+            "role": "Developer",
+            "email": "shiro_amada08th@yahoo.com",
+            "homepage": "https://github.com/shiroamada"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+      "guzzlehttp/guzzle": "^7.3",
+      "illuminate/queue": "5.1 - 5.8|^6.0|^7.0|^8.0|^9.0|^10.0",
+      "illuminate/notifications": "5.1 - 5.8|^6.0|^7.0|^8.0|^9.0|^10.0",
+      "illuminate/support": "5.1 - 5.8|^6.0|^7.0|^8.0|^9.0|^10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "mockery/mockery": "^1.3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotificationChannels\\GreenApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotificationChannels\\GreenApi\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NotificationChannels\\GreenApi\\GreenApiServiceProvider"
+            ]
+        }
+    }
+}
