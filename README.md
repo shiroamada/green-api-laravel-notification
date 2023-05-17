@@ -1,7 +1,7 @@
 # GREEN API notifications channel for Laravel 5.3+
 
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/shiroamada/green-api.svg?style=flat-square)](https://packagist.org/packages/shiroamada/green-api-laravel-notification)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/shiroamada/green-api-laravel-notification?style=flat-square)](https://packagist.org/packages/shiroamada/green-api-laravel-notification)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/shiroamada/green-api-laravel-notification/master.svg?style=flat-square)](https://travis-ci.org/shiroamada/gosms)
 [![StyleCI](https://styleci.io/repos/108503043/shield)](https://styleci.io/repos/108503043)
