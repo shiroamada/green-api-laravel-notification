@@ -63,12 +63,17 @@ class GreenApiChannel
                 //this is for malaysia number use case,
                 if ($recipient[0] == '6')
                 {
-                    $valid_mobile = '+' . $recipient;
+                    $valid_mobile = '' . $recipient;
                 }
 
                 if ($recipient[0] == '0')
                 {
-                    $valid_mobile = '+6' . $recipient;
+                    $valid_mobile = '6' . $recipient;
+                }
+
+                if ($recipient[0] == '+')
+                {
+                    $valid_mobile = $recipient;
                 }
             }
             else

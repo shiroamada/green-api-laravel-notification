@@ -9,7 +9,7 @@ use NotificationChannels\GreenApi\Exceptions\CouldNotSendNotification;
 class GreenApi
 {
     /** @var string */
-    protected $apiUrl = 'https://api.green-api.com/';
+    protected $apiUrl;
 
     /** @var HttpClient */
     protected $httpClient;
@@ -42,6 +42,7 @@ class GreenApi
 
     public function __construct($config)
     {
+        $this->apiUrl = (isset($config['apiUrl']) ? $config['apiUrl'] : 'https://1103.api.green-api.com/');
         $this->instanceId = $config['instanceId'];
         $this->token = $config['token'];
 
@@ -72,6 +73,8 @@ class GreenApi
         {
             try
             {
+                //remove + sign infront of phone number
+                $params['to'] = str_replace('+', '', $params['to']);
 
                 $response = $this->httpClient->post(
                     $this->apiUrl . 'waInstance' . $this->instanceId . $this->action . $this->token,

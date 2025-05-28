@@ -53,6 +53,7 @@ Add your green api instanceId and token to your `config/services.php`:
 ...
 'green_api' => [
     'isEnable' => env('GREEN_API_ENABLE') ?? 0,
+    'apiUrl' => env('GREEN_API_URL') ?? 'https://1103.api.green-api.com/',
     'instanceId' => env('GREEN_API_INSTANCEID'),
     'token' => env('GREEN_API_TOKEN'),
     'isMalaysiaMode' => env('GREEN_API_MALAYSIA_MODE') ?? 0,
