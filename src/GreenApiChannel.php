@@ -25,7 +25,7 @@ class GreenApiChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        $to = $notifiable->routeNotificationFor('green_api');
+        $to = $notifiable->routeNotificationFor('greenapi');
 
         if (empty($to)) {
             throw CouldNotSendNotification::missingRecipient();

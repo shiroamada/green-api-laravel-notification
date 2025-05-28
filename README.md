@@ -95,6 +95,16 @@ public function routeNotificationForGreenApi()
 }
 ```
 
+```php
+// routes/web.php
+$this->get('preview-notification', function () {
+
+    $user = User::where('email', 'shiroamada@shiro.my')->first();
+     Notification::route('greenapi', $user->mobile)->notify(
+         new \App\Notifications\SendTest()
+     );
+```
+
 ### Available methods
 
 `content()`: Set a content of the notification message.
