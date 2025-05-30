@@ -35,6 +35,8 @@ class GreenApiMessage
      */
     public function __construct($content = '')
     {
+        //convert \n to newline
+        $content = str_replace('\n', "\n", $content);
         $this->content = $content;
     }
 
