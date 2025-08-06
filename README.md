@@ -1,4 +1,4 @@
-# GREEN API notifications channel for Laravel 5.3+
+# GREEN API notifications channel for Laravel 11+
 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shiroamada/green-api-laravel-notification?style=flat-square)](https://packagist.org/packages/shiroamada/green-api-laravel-notification)
@@ -9,7 +9,7 @@
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/smsc-ru/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/shiroamada/green-api-laravel-notification/?branch=main)
 [![Total Downloads](https://img.shields.io/packagist/dt/shiroamada/green-api-laravel-notification.svg?style=flat-square)](https://packagist.org/packages/shiroamada/green-api-laravel-notification)
 
-This package makes it easy to send notifications using [https://green-api.com/en/](https://green-api.com/en) with Laravel 5.3+.
+This package makes it easy to send notifications using [https://green-api.com/en/](https://green-api.com/en) with Laravel 11+.
 
 Code Reference from laravel-notification-channels/smsc-ru
 

@@ -14,4 +14,9 @@ class GreenApiServiceProvider extends ServiceProvider
             return new GreenApi($config);
         });
     }
+
+    public function boot()
+    {
+        // Boot method for Laravel 11+ compatibility
+    }
 }
