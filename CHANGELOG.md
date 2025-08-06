@@ -2,7 +2,7 @@
 
 All notable changes to `gosms` will be documented in this file
 
-## 2.0.0 - 2025-08-06
+## 11.0.0 - 2025-08-06
 - Laravel 11+ support
 - PHP 8.1+ requirement
 - Updated dependencies (Guzzle 7.0+, PHPUnit 10.0+)
