@@ -37,6 +37,11 @@ class GreenApiMessage
     {
         //convert \n to newline
         $content = str_replace('\n', "\n", $content);
+        
+        $content = str_replace('&nbsp;', " ", $content);
+        
+        $content = str_replace('<br>', "\n", $content);
+        
         $this->content = $content;
     }
 
