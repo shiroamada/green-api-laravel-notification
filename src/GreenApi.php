@@ -58,6 +58,12 @@ class GreenApi
             'timeout' => 8.0,
             'headers' => [ 'Content-Type' => 'application/json' ]
         ]);
+
+        if (isset($config['proxy']) && !empty($config['proxy'])) {
+            $clientParams['proxy'] = $config['proxy'];
+        }
+
+        $this->httpClient = new HttpClient($clientParams);
     }
 
     /**
