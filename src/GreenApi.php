@@ -53,11 +53,11 @@ class GreenApi
 
 
         //POST https://api.green-api.com/waInstance{{idInstance}}/SendMessage/{{apiTokenInstance}}
-        $this->httpClient = new HttpClient([
+        $clientParams = [
             'base_uri' =>  $this->apiUrl.'waInstance'.$this->instanceId.$this->action,
             'timeout' => 8.0,
             'headers' => [ 'Content-Type' => 'application/json' ]
-        ]);
+        ];
 
         if (isset($config['proxy']) && !empty($config['proxy'])) {
             $clientParams['proxy'] = $config['proxy'];
